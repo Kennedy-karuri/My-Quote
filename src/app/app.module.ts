@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WiseSayingComponent } from './wise-saying/wise-saying.component';
 import { QuoteComponent } from './quote/quote.component';
+import { FormsComponent } from './forms/forms.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WiseSayingComponent,
-    QuoteComponent
+    QuoteComponent,
+    FormsComponent,
+   
   ],
   imports: [
     BrowserModule,
