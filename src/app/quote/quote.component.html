@@ -1,7 +1,14 @@
-<div class="jumbotron">
-    <div class="row">
-        <div class="col-md- 7">
-    <app-forms></app-forms>
-    </div>   
-</div>
+<div class="row">
+    <div class="col-md-6">
+        <div *ngFor='let quote of quotes'>
+            <p>{{quote.id}}</p>
+            <p>{{quote.user}}</p>
+            <p>{{quote.description}}</p>
+            <p>{{quote.author}}</p>
+            <p>{{quote.day}}</p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <app-forms></app-forms>
+    </div>
 </div>
