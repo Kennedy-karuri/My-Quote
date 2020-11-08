@@ -1,14 +1,36 @@
 <h2>Write Your Quotes Here</h2>
 <div>
     <form>
-        <p>Fill out the form below to add your quote !</p>
-        <label for="name">Your Name</label>
-        <input type="text" placeholder="Add your name here..." class="form-control" id="name" name="name"><br>
-        <label for="Quote-title">Quote-Title</label>
-        <input type="text" placeholder=" Quote title here..." class="form-control" id="title" name="title"><br>
-        <textarea name="Quote" id="message" cols="70" rows="4" placeholder="Write quote here"></textarea><br>
-        <label for="Author">Author's Name</label>
-        <input type="text" placeholder="Author's name here..." class="form-control" id="name" name="name"><br>
-        <button type="submit" class="btn btn-success btn-block ">SUBMIT QUOTE</button>
+        <div class="container-fluid">
+            <h2 class="text-center">Create a new Quote</h2>
+            <hr>
+            <form (ngSubmit)='submitQuote()'#quoteForm='ngForm'>
+                <div class="form-group">
+          
+                    <label for="name">Author</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.author" name="name" #author='ngModel' required>
+                    <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                      <p>Author is required</p>
+                    </div>
+                </div>
+                <div class="form-group">
+          
+                    <label for="Quote">Quote</label>
+                    <textarea class="form-control" id="description" rows="4" [(ngModel)]="newQuote.Description" name="description" #Description="ngModel" required></textarea>
+                    <div [hidden]="Description.valid || Description.pristine" class="alert alert-danger">
+                      <p>Quote is required</p>
+                    </div>
+                </div>
+                <div class="form-group">
+          
+                    <label for="complete">Completion</label>
+                    <input type='date' id="complete" [(ngModel)]="newQuote.day" name="completeDate" #day="ngModel" required>
+                    <div [hidden]="day.valid || day.pristine" class="alert alert-danger">
+                      <p>Date is required</p>
+                    </div>
+                </div>
+                <button type="submit" id="ken" class="btn btn-success ">Add Quote</button>
+            </form>
+          </div>
     </form>
 </div>

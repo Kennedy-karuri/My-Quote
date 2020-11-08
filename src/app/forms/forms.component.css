@@ -1,6 +1,7 @@
 h2{
     text-align: center;
     color: blue;
+    font-size:xx-large;
 }
 
 p{
@@ -12,4 +13,8 @@ p{
 form{
     font-family:'Big Shoulders Stencil Display', cursive;
     font-weight: bold;
+} 
+
+#ken{
+    color: green;
 }
