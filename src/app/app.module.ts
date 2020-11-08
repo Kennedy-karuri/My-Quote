@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { QuoteComponent } from './quote/quote.component';
 import { FormsComponent } from './forms/forms.component';
 import { from } from 'rxjs';
+import { QuoteDetailsComponent } from './quote-details/quote-details.component';
+import { DateCountPipe } from './date-count.pipe';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { from } from 'rxjs';
     AppComponent,
     QuoteComponent,
     FormsComponent,
+    QuoteDetailsComponent,
+    DateCountPipe,
    
   ],
   imports: [
