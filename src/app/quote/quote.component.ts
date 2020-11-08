@@ -7,42 +7,37 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  quotes: Quote[] = [ 
-    new Quote(1, 'MARTIN lUTHER', 'I have a dream','Steve',new Date(2020,4,15)),
-    new Quote(2, 'SOCRATES', 'The unexamined life is not worth living.', 'Petrah',new Date(2020,7,30)),
-    new Quote(3, 'SOCRATES', 'Wonder is the beginning of wisdom', 'Ken',new Date(2019,6,27)),
-    new Quote(4, 'Aristotle', 'The roots of education … are bitter, but the fruit is sweet.', 'Farzana',new Date(2019,8,29)),
-    new Quote(5, 'Sir Isaac Newton', 'If I have seen further it is by standing on the shoulders of giants', 'Carol',new Date(2020,8,6)),
+  quotes: Quote[] = [
+    new Quote(1, 'Thomas A. Edison', '“Many of life’s failures are people who did not realize how close they were to success when they gave up.”', 'Steve', new Date(2020, 11, 11)),
+    new Quote(2, 'Steve Jobs', ' “Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.” ', 'Petrah', new Date(2020, 12, 30)),
+      
   ]; 
-  
-  upvote(index){
+  addNewQuote(quote) {
+    let goalLength = this.quotes.length;
+    quote.id = goalLength + 1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
+  upvote(index) {
     this.quotes[index].upvote++;
   }
 
-
-  downvote(index){
-    this.quotes[index].downvote;
+ 
+  downvote(index) {
+    this.quotes[index].downvote++;
   }
 
-  deleteQuote(isComplete, index){
+  deleteQuote(isComplete, index) {
     if (isComplete) {
-      let toDelete = confirm(`Do you want to delete this quote. ${this.quotes[index].user}?` )
+      let toDelete = confirm(`Do you want to delete this quote. ${this.quotes[index].user}?`)
 
-      if(toDelete){
-        this.quotes.splice(index,1)
+      if (toDelete) {
+        this.quotes.splice(index, 1)
       }
     }
   }
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  constructor() { }
+
+ constructor() { }
   ngOnInit(): void {
   }
 

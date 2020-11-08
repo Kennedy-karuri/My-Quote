@@ -1,24 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngFor='let quote of quotes; let i = index'>
+                <div class="card text-center">
+                    <div class="card-header">
+                        Author : {{quote.author}}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Quote : {{quote.Description}}</h5>
+                        <p class="card-text">Created by : {{quote.user}}</p>
+                        <button  class='btn btn-outline-success' (click)='upvote(i)'>Like {{quote.upvote}}</button>
+                        <button  class='btn btn-outline-primary' (click)='downvote(i)'>Dislike {{quote.downvote}}</button>
+                        <button  class='btn btn-outline-danger' (click)='deleteQuote($event,i)'>Delete Quote</button>
+                       
 
-<div class="row">
-    <div class="col-md-6">
-         <div *ngFor="let quote of quotes; let i = index" >
-            <p>{{ quote.id }}</p>
-            <p>{{quote.author}}</p>
-            <p>{{quote.description}}</p>
-            <p>{{quote.user}}</p>
-          
-            
-            <p>{{quote.day}}</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        {{quote.day|dateCount}} days ago
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-    
-        <button  class="btn btn-success"(click)='upvote(i)'>upvote {{quote.upvote}}</button>
-        <button class="btn btn-primary"(click)='downvote(i)'>downvote{{quote.downvote}}</button><br>
-        <button class="btn btn-danger"(click)='deleteQuote($event,i)'>DELETE</button>
-    </div>
-    
-    <div class="col-md-6"> 
-    
-        <app-forms></app-forms>
-    </div>
-</div>
 
+        <div class="col-md-6">
+            
+
+            <app-forms (addQuote)="addNewQuote($event)"></app-forms>
+        </div>
+    </div>
+
+</div>
