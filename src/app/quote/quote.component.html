@@ -1,14 +1,24 @@
+
 <div class="row">
     <div class="col-md-6">
-        <div *ngFor='let quote of quotes'>
-            <p>{{quote.id}}</p>
-            <p>{{quote.user}}</p>
-            <p>{{quote.description}}</p>
+         <div *ngFor="let quote of quotes; let i = index" >
+            <p>{{ quote.id }}</p>
             <p>{{quote.author}}</p>
+            <p>{{quote.description}}</p>
+            <p>{{quote.user}}</p>
+          
+            
             <p>{{quote.day}}</p>
         </div>
+    
+        <button  class="btn btn-success"(click)='upvote(i)'>upvote {{quote.upvote}}</button>
+        <button class="btn btn-primary"(click)='downvote(i)'>downvote{{quote.downvote}}</button><br>
+        <button class="btn btn-danger"(click)='deleteQuote($event,i)'>DELETE</button>
     </div>
-    <div class="col-md-6">
+    
+    <div class="col-md-6"> 
+    
         <app-forms></app-forms>
     </div>
 </div>
+

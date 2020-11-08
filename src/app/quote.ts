@@ -12,6 +12,8 @@ export class Quote {
         this.description = description;
         this.user = user;
         this.day = day;
+        this.upvote = 0;
+        this.downvote =0;
 
     }
 }
