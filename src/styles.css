@@ -1,2 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.css';
+.card{
+    margin-bottom: 5%;
+}
+button{
+    margin-right: 5%;
+}
+
+*{
+    background-image: url(./assets/background1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
