@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WiseSayingComponent } from './wise-saying/wise-saying.component';
+
 import { QuoteComponent } from './quote/quote.component';
 import { FormsComponent } from './forms/forms.component';
 import { from } from 'rxjs';
@@ -13,7 +13,6 @@ import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
-    WiseSayingComponent,
     QuoteComponent,
     FormsComponent,
    
